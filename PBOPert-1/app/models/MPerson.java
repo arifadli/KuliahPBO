@@ -2,7 +2,7 @@ package models;
 
 public class MPerson {
    public static void main (String[] args){
-	  // ini perubahan sedikit
+	  // ini perubahan sedikit saja
 	  Person person1, person2; 
 	  
 	  person1 = new Person();
