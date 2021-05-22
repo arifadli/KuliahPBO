@@ -1,1 +1,1 @@
-Commit from Visual Studio Code
+Commit from VS Code
