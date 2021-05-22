@@ -28,7 +28,7 @@ public class Application extends Controller {
     
     public static void tambahObject(Person objectbaru){
     	objectbaru.nama = objectbaru.nama;
-    	objectbaru.getnoiden();
+    	objectbaru.noiden = objectbaru.noiden;
     	render(objectbaru);
     }
 

@@ -2,12 +2,12 @@ package models;
 
 public class Person {
   public String nama;
-  private int noiden;
+  public int noiden;
   private int password;
   
   //ciptakan konstruktor
   public Person(){
-	  nama="Ari Fadli";
+	  nama ="Ari Fadli";
 	  noiden = 123456;
   }
   
