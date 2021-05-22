@@ -4,6 +4,7 @@ import play.*;
 import play.mvc.*;
 
 import java.util.*;
+import java.util.function.ToIntFunction;
 
 import models.*;
 
@@ -17,7 +18,7 @@ public class Application extends Controller {
     	Person person1;
   	  person1 = new Person();
   	  person1.nama = "Ari Fadli";
-  	  person1.noiden = 123456;
+  	  person1.setnoiden(67890);
   	  render(person1);
     }
     
@@ -27,7 +28,7 @@ public class Application extends Controller {
     
     public static void tambahObject(Person objectbaru){
     	objectbaru.nama = objectbaru.nama;
-    	objectbaru.noiden = objectbaru.noiden;
+    	objectbaru.getnoiden();
     	render(objectbaru);
     }
 

@@ -7,10 +7,8 @@ public class MPerson {
 	  
 	  person1 = new Person();
 	  person1.nama = "Ari Fadli";
-	  person1.noiden = 123456;
 	  
 	 System.out.println("nama: "+ person1.nama); 
-	 System.out.println("no identitas:"+ person1.noiden);
 	 
 	 person2 = new Person();
 	 
@@ -20,7 +18,6 @@ public class MPerson {
 	 System.out.println(person2.getnama());
 	 System.out.println(person2.getnoiden());
 	
-	 
 	 
    }
 }
