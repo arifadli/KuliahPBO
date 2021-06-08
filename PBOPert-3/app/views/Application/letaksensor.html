@@ -1,0 +1,71 @@
+<html>
+<head>
+<style>
+body{
+	font-family: sans-serif;
+	background: #d5f0f3;
+}
+
+h1{
+	text-align: center;
+	/*ketebalan font*/
+	font-weight: 300;
+}
+
+.tulisan_login{
+	text-align: center;
+	/*membuat semua huruf menjadi kapital*/
+	text-transform: uppercase;
+}
+
+.kotak_login{
+	width: 350px;
+	background: white;
+	/*meletakkan form ke tengah*/
+	margin: 80px auto;
+	padding: 30px 20px;
+}
+
+label{
+	font-size: 11pt;
+}
+
+.form_login{
+	/*membuat lebar form penuh*/
+	box-sizing : border-box;
+	width: 100%;
+	padding: 10px;
+	font-size: 11pt;
+	margin-bottom: 20px;
+}
+
+.tombol_login{
+	background: #46de4b;
+	color: white;
+	font-size: 11pt;
+	width: 100%;
+	border: none;
+	border-radius: 3px;
+	padding: 10px 20px;
+}
+
+.link{
+	color: #232323;
+	text-decoration: none;
+	font-size: 10pt;
+}
+</style>
+</head>
+<body>
+
+<div class="kotak_login">
+<p class="tulisan_login">Letak Sensor</p>
+<form name="sensor" action="@{Application.informasiposisi()}">
+Longitude : <input type="text" class="form_login" placeholder="Longitude" name="sensor.longitude"><br>
+Latitude : <input type="text" class="form_login" placeholder="Latitude" name="sensor.latitude"><br>
+Jarak dari Server : <input type="text" class="form_login" placeholder="Masukan Jarak Dari Server" name="sensor.distfromserver"><br>
+<input type="submit" value="Simpan" class="tombol_login">
+</form>
+</div>
+</body>
+</html>
