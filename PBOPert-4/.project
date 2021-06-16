@@ -17,5 +17,8 @@
 	</natures>
 	<linkedResources><link><name>docviewer</name><type>2</type><location>D:/playframework/modules/docviewer/app</location></link>
 <link><name>public/docviewer</name><type>2</type><location>D:/playframework/modules/docviewer/public</location></link>
+<link><name>crud</name><type>2</type><location>D:/playframework/modules/crud/app</location></link>
+<link><name>conf/crud</name><type>2</type><location>D:/playframework/modules/crud/conf</location></link>
+<link><name>public/crud</name><type>2</type><location>D:/playframework/modules/crud/public</location></link>
 </linkedResources>
 </projectDescription>
