@@ -1,4 +1,8 @@
-#{extends 'main.html' /}
-#{set title:'Home' /}
-
-#{welcome /}
+@(person:Person,personn:Person)
+@main("Welcome to Play") {
+<h1> Display Data From Model </h1>
+<ul>
+<li>${mhs1.getnama()} ${mhs1.getnim()}</li>
+<li>${mhs2.getnama()} ${mhs2.getnim()} </li>
+</ul>
+}
