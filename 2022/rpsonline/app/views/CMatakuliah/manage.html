@@ -1,0 +1,33 @@
+#{set title:'Manage Prodi' /}
+#{extends 'metis-manage.html' /}
+
+#{form @hapusAll(), 'id':'delSel'}
+	<table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
+		<thead>
+			<tr>
+				<th width="40px"><input type="checkbox" id="selAll" name="selectAll"></th>
+				<th>No.</th>
+				<th>Nama Prodi</th>
+				<th>Nama Prodi Inggris</th>
+				<th>Nama Jurusan</th>
+				<th>Aksi</th>
+			</tr>
+		</thead>
+		<tbody id="myRow">
+			#{list prodis, as:'z'}
+			<tr>
+				<td><input type="checkbox" name="data[]" value="${z.id}" id="myCheck" /></td>
+				<td>${z_index}</td>
+				<td>${z.namaProdi}</td>
+				<td>${z.namaProdiIng}</td>
+				<td><a href="@{CProdi.form(z.id)}" title="Edit" class="glyphicon glyphicon-pencil"></a>
+					<a href="javascript:delMe(${z.id});" title="Delete" class="glyphicon glyphicon-trash"></a></td>
+			</tr>
+			#{/list}
+		</tbody>
+	</table>
+#{/form}
+
+#{set 'viewPureForm'}
+	#{include 'CProdi/pureForm.html' /}
+#{/set}

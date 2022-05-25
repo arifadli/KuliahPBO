@@ -1,0 +1,68 @@
+#{field 'bidangilmu'}
+<div class="form-group #{ifError 'matakuliah.bidangilmu'} has-error #{/ifError}">
+	<label for="text1" class="control-label col-lg-3">Nama Jurusan (*)</label>
+	<div class="col-lg-9">
+		<div class="row">
+			<div class="col-lg-10">
+				#{select field.name, items:controllers.CBidangIlmu.getDataList(), value:bidangilmu?.bidangilmu?.id, required:'required', class:'form-control chzn-select', id:'text1' /}
+			</div>
+			#{ifError 'matakuliah.bidangilmu'}
+			<div class="col-lg-2">
+				<span for="text1" class="help-block">#{error 'matakuliah.bidangilmu' /}</span>
+			</div>
+			#{/ifError}
+		</div>
+	</div>
+</div>
+#{/field}
+
+#{field 'kodemk'}
+<div class="form-group #{ifError 'prodi.kodemk'} has-error #{/ifError}">
+	<label for="text2" class="control-label col-lg-3">Nama Prodi (*)</label>
+	<div class="col-lg-9">
+		<div class="row">
+			<div class="col-lg-10">
+				<input type="text" id="text2" placeholder="Nama Prodi" class="form-control" name="${field.name}" value="${prodi?.kodemk}" required />
+			</div>
+			#{ifError 'prodi.namaProdi'}
+			<div class="col-lg-2">
+				<span for="text2" class="help-block">#{error 'prodi.kodemk' /}</span>
+			</div>
+			#{/ifError}
+		</div>
+	</div>
+</div>
+#{/field}
+
+#{field 'namamk'}
+<div class="form-group #{ifError 'matakuliah.namamk'} has-error #{/ifError}">
+	<label for="text3" class="control-label col-lg-3">Nama Prodi Inggris</label>
+	<div class="col-lg-9">
+		<div class="row">
+			<div class="col-lg-10">
+				<input type="text" id="text3" placeholder="Nama Prodi Inggris" class="form-control" name="${field.name}" value="${matakuliah?.namamk}" />
+			</div>
+			#{ifError 'prodi.namamk'}
+			<div class="col-lg-2">
+				<span for="text3" class="help-block">#{error 'matakuliah.namamk' /}</span>
+			</div>
+			#{/ifError}
+		</div>
+	</div>
+</div>
+#{/field}
+
+<div class="form-group no-margin-bottom">
+	<div class="col-lg-3">&nbsp;</div>
+	<div class="col-lg-9">
+		<b>(*) Wajib Diisi.</b>
+	</div>
+</div>
+
+<div class="form-group no-margin-bottom">
+	<div class="col-lg-3">&nbsp;</div>
+	<div class="col-lg-9">
+		<button type="reset" class="btn btn-metis-1 btn-grad btn-rect"><i class="glyphicon glyphicon-refresh"></i>&nbsp;&nbsp;Reset</button>
+		<button type="submit" class="btn btn-metis-6 btn-grad btn-rect"><i class="glyphicon glyphicon-ok"></i>&nbsp;&nbsp;Simpan</button>
+	</div>
+</div>

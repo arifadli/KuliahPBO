@@ -1,0 +1,121 @@
+#{extends 'main.html' /}
+#{set title:'Standar Kompetensi' /}
+
+<div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+			<a class="navbar-brand" href="index.html">Sistem Penjaminan Mutu</a>
+        </div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <ul class="nav navbar-right navbar-top-links">
+            <li class="dropdown navbar-inverse">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
+                </a>
+				
+					<ul class="dropdown-menu dropdown-alerts">
+					    #{if user?.id}
+						<li>
+							<a href="#">
+                                <div>
+									<i class="fa fa-comment fa-fw"></i>Setting
+                                </div>
+                            </a>
+                        </li>
+						<li>
+							<a href="@{Application.logout()}">
+                                <div>
+									<i class="fa fa-comment fa-fw"></i>Logout
+                                </div>
+                            </a>
+                        </li>						
+						#{/if}
+                    </ul>
+            </li>
+
+        </ul>
+                <!-- /.navbar-top-links -->
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <!-- /input-group -->
+                            </li>
+                            <li>
+                                <a href="@{Application.index()}"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Dokumen RPS<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li> <a href="#">Upload Dokumen</a> </li>
+									<li> <a href="#">Bidang Ilmu</a> </li>
+									<li> <a href="#">Standar Komptensi</a> </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="tables.html"><i class="fa fa-table fa-fw"></i> Ganti Password</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
+                <!-- /.navbar-static-side -->
+            </nav>
+
+            <!-- Page Content -->
+            <div id="page-wrapper">
+                <div class="container-fluid">
+					<div class="row">
+						&nbsp;&nbsp;<br><br>
+						<b><h4>#{ifnot stdkomp?.id} Tambah Data #{/ifnot}
+							#{else} Edit Data #{/else}
+						</br></h4>
+					<div class="col-lg-12">
+						<div class="box dark">
+							<div id="div-1" class="accordion-body collapse in body">
+								#{form @simpan(stdkomp?.id), 'class':'form-horizontal'}
+									#{include 'CStdKomp/pureForm.html' /}
+								#{/form}
+							</div>
+						</div>
+					</div>
+			</div>
+		</div> 
+  	</div> 									
+</div>
+					
+<script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+</script>
+
+					
+					
+					
+					</div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /#page-wrapper -->
+        </div>

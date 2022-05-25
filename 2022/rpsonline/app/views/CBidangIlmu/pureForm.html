@@ -1,0 +1,37 @@
+#{field 'kodebidilmu'}
+<div class="form-group #{ifError 'bidangilmu.kodebidilmu'} has-error #{/ifError}">
+		<div class="row">
+			<div class="col-lg-4">
+				<label for="text2" class="control-label">Kode Bidang Ilmu (*)</label>
+				<input type="text" id="text2" placeholder="Kode Bidang Ilmu" class="form-control" name="${field.name}" value="${bidangilmu?.kodebidilmu}" required />
+			</div>
+			#{ifError 'bidangilmu.kodebidilmu'}
+			<div class="col-lg-2">
+				<span for="text2" class="help-block">#{error 'bidangilmu.kodebidilmu' /}</span>
+			</div>
+			#{/ifError}
+		</div>
+</div>
+#{/field}
+
+#{field 'namabidilmu'}
+<div class="form-group #{ifError 'bidangilmu.namabidilmu'} has-error #{/ifError}">
+		<div class="row">
+			<div class="col-lg-4">
+				<label for="text2" class="control-label">Nama Bidang Ilmu (*)</label>
+				<input type="text" id="text2" placeholder="Bidang Ilmu" class="form-control" name="${field.name}" value="${bidangilmu?.namabidilmu}" required />
+			</div>
+			#{ifError 'bidangilmu.namabidilmu'}
+			<div class="col-lg-2">
+				<span for="text2" class="help-block">#{error 'bidangilmu.namabidilmu' /}</span>
+			</div>
+			#{/ifError}
+		</div>
+</div>
+#{/field}
+
+<div class="form-group no-margin-bottom">
+		<b>(*) Wajib Diisi.</b> <br>
+		<button type="reset" class="btn btn-metis-1 btn-grad btn-rect"><i class="glyphicon glyphicon-refresh"></i>&nbsp;&nbsp;Reset</button>
+		<button type="submit" class="btn btn-metis-6 btn-grad btn-rect"><i class="glyphicon glyphicon-ok"></i>&nbsp;&nbsp;Simpan</button>
+</div>

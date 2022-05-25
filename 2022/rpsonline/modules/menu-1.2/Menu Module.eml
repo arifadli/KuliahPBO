@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<contentEntry url="file://J:/play/modules/crud/app"/>
+	<contentEntry url="file://J:/play/modules/secure/app"/>
+	<lib name="mongo-2.6.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/_lgl/play-menu/lib/mongo-2.6.1.jar!/"/>
+	</lib>
+</component>
