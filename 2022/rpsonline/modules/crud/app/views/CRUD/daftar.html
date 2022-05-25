@@ -1,0 +1,119 @@
+#{extends 'main.html' /}
+#{set title:'Search' /}
+
+<div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+			<a class="navbar-brand" href="index.html">Sistem Penjaminan Mutu</a>
+        </div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <ul class="nav navbar-right navbar-top-links">
+            <li class="dropdown navbar-inverse">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
+                </a>
+				
+					<ul class="dropdown-menu dropdown-alerts">
+					    #{if user?.id}
+						<li>
+							<a href="@{Courses.settings()}">
+                                <div>
+									<i class="fa fa-comment fa-fw"></i>Setting
+                                </div>
+                            </a>
+                        </li>
+						<li>
+							<a href="@{Application.logout()}">
+                                <div>
+									<i class="fa fa-comment fa-fw"></i>Logout
+                                </div>
+                            </a>
+                        </li>						
+						#{/if}
+                    </ul>
+            </li>
+
+        </ul>
+                <!-- /.navbar-top-links -->
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <!-- /input-group -->
+                            </li>
+                            <li>
+                                <a href="@{Courses.index()}"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Dokumen RPS<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li> <a href="@{Courses.daftar()}">Upload Dokumen</a> </li>
+									<li> <a href="@{Courses.daftar()}">Bidang Ilmu</a> </li>
+									<li> <a href="@{Courses.daftar()}">Standar Komptensi</a> </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="tables.html"><i class="fa fa-table fa-fw"></i> Ganti Password</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
+                <!-- /.navbar-static-side -->
+            </nav>
+
+            <!-- Page Content -->
+            <div id="page-wrapper">
+                <div class="container-fluid">
+					<div class="row">
+					    <br />
+						<h3>Upload Dokumen RPS</h3>
+				
+													#{form action:@create(), enctype:'multipart/form-data'}
+									#{crud.form /}
+									<p class="crudButtons">
+										<input type="submit" name="_save" value="&{'crud.save', type.modelName}" />
+										<input type="submit" name="_saveAndContinue" value="&{'crud.saveAndContinue', type.modelName}" />
+										<input type="submit" name="_saveAndAddAnother" value="&{'crud.saveAndAddAnother', type.modelName}" />
+									</p>
+								#{/form}
+
+					
+					</div>
+					
+
+        <script>
+            $(document).ready(function() {
+                $('#dataTables-example').DataTable({
+                        responsive: true
+                });
+            });
+        </script>
+
+					
+					
+					
+					</div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /#page-wrapper -->
+        </div>
