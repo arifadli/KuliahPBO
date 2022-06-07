@@ -1,0 +1,26 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /                                       Application.index
+GET     /rpsonline                              Application.dashboard
+GET     /register                               Application.register
+POST    /register                               Application.saveUser
+POST    /login                                  Application.login
+GET     /logout                                 Application.logout
+GET     /settings                               Application.settings
+POST    /settings                               Application.saveSettings
+GET     /rpsonline/stdkomp/form				    CSTdKomp.form
+GET     /rpsonline/bidangilmu/form				CBidangIlmu.form
+GET     /rpsonline/matakuliah/form				CMatakuliah.form
+
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
+*  		/admin  								module:crud
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
