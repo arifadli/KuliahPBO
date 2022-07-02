@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <h1 style="color: cornflowerblue"><u>E-Library</u></h1>
+        <b>v1.8 created by faux</b>
+    </head>
+
+    <body>
+        <form>
+            <input type="submit" value="Login" formaction="@{Application.login()}"/>
+            <input type="submit" value="Register" formaction="@{Application.register()}"/>
+        </form>
+
+        <h3>Daftar Buku</h3>
+        <table border="I">
+            <tr>
+                <th>Judul Buku</th>
+                <th>Indeks</th>
+                <th>Penerbit</th>
+                <th>Tahun Terbit</th>
+            </tr>
+            #{list items: daftar, as: 'b'}
+            <tr>
+                <td>${b.judul}</td> <td>${b.indeks}</td> <td>${b.pnrbt}</td> <td>${b.tahunTerbit}</td>
+            </tr>
+            #{/list}
+        </table>
+
+        <h3>Menu Perpustakaan
+            <h4>
+            Tambahkan Buku Baru
+            <form>
+                <input type="text" placeholder="Judul">
+                <button type="submit"> Add Book </button>
+            </form>
+            
+            Unduh/Pinjam Buku
+            <form>
+                <input type="text" placeholder="Masukkan indeks buku">
+                <button type="submit"> Download Book </button>
+            </form>
+            </h4>
+        </h3>
+    </body>
+</html>
+<!-- <html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="${_response_encoding}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+    </head>
+    <body>
+        #{doLayout /}
+        
+        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        #{get 'moreScripts' /}
+    </body>
+</html> -->
