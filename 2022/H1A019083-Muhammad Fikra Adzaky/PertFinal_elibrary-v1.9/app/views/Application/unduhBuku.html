@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <h1 style="color: cornflowerblue"><u>E-Library</u></h1>
+    </head>
+
+    <body>
+        <h3>Unduh/Pinjam Buku</h3>
+        Masukkan data buku yang hendak diunduh
+        <form name="objbook" action="@{Application.unduhBuku()}">
+            <label>Cari Judul:</label><br>
+            <input type="text" name="objjudul" placeholder="judul"/>
+            <input type="submit" value="Cari"/>
+            <input type="submit" value="Kembali" formaction="@{index()}"/>
+        </form>
+    </body>
+</html>
+

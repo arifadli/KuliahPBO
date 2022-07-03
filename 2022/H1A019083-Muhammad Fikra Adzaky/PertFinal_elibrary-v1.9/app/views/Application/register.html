@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <h1 style="color: cornflowerblue"><u>E-Library</u></h1>
+        <b>v1.8 created by faux</b>
+    </head>
+
+    <body>
+        <p>Masukkan data user baru</p>
+        <form name="objuser" action="@{Application.buatAkun()}">
+            <label>Nama:</label><br>
+            <input type="text" name="objuser.name" placeholder="nama"/> <br/>
+            <label>Username:</label><br>
+            <input type="text" name="objuser.username" placeholder="username"/> <br/>
+            <label>Password:</label><br>
+            <input type="text" name="objuser.password" placeholder="password"/> <br/>
+            <br>
+            <input type="submit" value="Submit"/>
+            <input type="submit" value="Kembali" formaction="@{index()}"/>
+        </form>
+    </body>
+</html>
+

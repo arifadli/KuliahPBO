@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <h1 style="color: cornflowerblue"><u>E-Library</u></h1>
+        <b>v1.8 created by faux</b>
+    </head>
+
+    <body>
+        <form>
+            <input type="submit" value="Login" formaction="@{Application.login()}"/>
+            <input type="submit" value="Register" formaction="@{Application.register()}"/>
+        </form>
+
+        <h3>Menu Perpustakaan
+            <form>
+                <input type="submit" value="Tampilkan semua buku" formaction="@{Application.tampilbuku()}"/>
+                <input type="submit" value="Tambah Buku" formaction="@{Application.tambahBuku()}"/>
+                <input type="submit" value="Unduh Buku" formaction="@{Application.unduhBuku()}"/>
+            </form>
+        </h3>
+    </body>
+</html>
