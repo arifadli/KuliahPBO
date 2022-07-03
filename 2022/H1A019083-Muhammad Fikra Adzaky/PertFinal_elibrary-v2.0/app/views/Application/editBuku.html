@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <h1 style="color: cornflowerblue"><u>E-Library</u></h1>
+    </head>
+
+    <body>
+        <h3>Edit Buku</h3>
+        Masukkan data buku yang akan diedit
+        <form name="bukubaru" action="@{Application.simpanBuku()}">
+            <label>Judul:</label><br>
+            <input type="text" name="bukubaru.judul" placeholder="judul" value="${bc.judul}"/> <br/>
+                
+            <label>Indeks:</label><br>
+            <input type="text" name="bukubaru.indeks" placeholder="indeks" value="${bc.indeks}"/> <br/>
+                
+            <label>Tahun Terbit:</label><br>
+            <input type="text" name="bukubaru.tahunTerbit" placeholder="tahun terbit" value="${bc.tahunTerbit}"/> <br/>
+
+            <label>Nama Penerbit:</label><br>
+            <input type="text" name="bukubaru.pnrbt.namaPenerbit" placeholder="penerbit" value="${bc.pnrbt.namaPenerbit}"/> <br/>
+
+            <label>Kota Terbit:</label><br>
+            <input type="text" name="bukubaru.pnrbt.kota" placeholder="kota terbit" value="${bc.pnrbt.kota}"/> <br/>
+            
+            <!-- Input Hidden ID -->
+            <input type="hidden" name="bukubaru.id" value="${bc.id}"/>
+            <br>
+            <input type="submit" value="Simpan"/>
+            <input type="submit" value="Kembali" formaction="@{Application.tampilbuku()}"/>
+        </form>
+    </body>
+</html>
+

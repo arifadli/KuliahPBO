@@ -1,0 +1,32 @@
+<h1 style="color: cornflowerblue">
+    <u>
+        <a href="@{index()}">
+            E-Library
+        </a>
+    </u>
+</h1>
+<h3>Daftar Buku</h3>
+
+<table border="I">
+    <tr>
+        <th>Judul Buku</th>
+        <th>Indeks</th>
+        <th>Penerbit</th>
+        <th>Tahun Terbit</th>
+        <th>Edit</th>
+    </tr>
+    #{list items: daftar, as: 'b'}
+
+    <tr>
+        <td>${b.judul}</td> <td>${b.indeks}</td> <td>${b.pnrbt}</td> <td>${b.tahunTerbit}</td>
+        <td><a href="@{Application.editBuku(b.id)}">edit</a></td>
+    </tr>
+    #{/list}
+</table>
+<br>
+
+<form>
+    <input type="submit" value="Tambah Buku" formaction="@{Application.tambahBuku()}"/>
+    <input type="submit" value="Unduh Buku" formaction="@{Application.unduhBuku()}"/>
+    <input type="submit" value="Kembali" formaction="@{index()}"/>
+</form>
