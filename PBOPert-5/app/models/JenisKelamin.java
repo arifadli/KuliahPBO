@@ -10,7 +10,7 @@ import org.hibernate.annotations.GenericGenerator;
 import play.db.jpa.Model;
 
 @Entity
-public class JenisKelamin extends Model{	
+public class JenisKelamin extends CRUD{	
 	public String namaKelamin;
 	
 	public String toString(){

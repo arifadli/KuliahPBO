@@ -1,31 +1,29 @@
 package models;
 
-public class Shoe{
-	public String brand;
+import javax.persistance.Entity;
+import javax.persistance.ManyToOne;
+
+@Entity
+public class Shoe extends Model{
 	public String colour; 
 	public int size;
+	@ManyToOne
+	public Brand brand;
 	
 	// cons
-	public Shoe(String brand, String colour, int size)
+	public Shoe(String colour, int size)
 	{
-		this.brand = brand;
 		this.colour = colour;
 		this.size = size;
-		
-		
 	}
 	
 	public void display()
 	{
-		System.out.println("Brand " + brand);
 		System.out.println("Colour " + colour);
 		System.out.println("Size " + size);
 	}
 	
 	// Getter
-	public String getBrand() {
-		return brand;
-	}
 	public String getColour() {
 		return colour;
 	}
@@ -34,9 +32,6 @@ public class Shoe{
 	}
 	
 	// Setter
-	public void setBrand(String mrk) {
-		brand = mrk;
-	}
 	public void setColour(String wrn) {
 		colour = wrn;
 	}

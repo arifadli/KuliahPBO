@@ -25,8 +25,8 @@ public class Matakuliah extends Model {
     @Unique
     public String namamk;
     
-    @Required
-    public Blob photo;
+   // @Required
+  // public Blob photo;
     
     /**
      *

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <h1 style="color: rgb(63, 10, 10)"><u>collectshoe</u></h1>
+    </head>
+
+    <body>
+        <p>Daftar</p>
+        <form name="objuser" action="@{Application.buatAkun()}">
+            <label>Nama Pemilik Sepatu:</label><br>
+            <input type="text" name="objuser.name" placeholder="namamu"/> <br/>
+            <label>id:</label><br>
+            <input type="text" name="objuser.username" placeholder="id"/> <br/>
+            <label>Password:</label><br>
+            <input type="text" name="objuser.password" placeholder="password"/> <br/>
+            <br>
+            <input type="submit" value="Submit"/>
+            <input type="submit" value="Kembali" formaction="@{index()}"/>
+        </form>
+    </body>
+</html>
+
